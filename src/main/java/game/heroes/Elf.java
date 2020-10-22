@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class Elf extends Character implements Actions
 {
+
     boolean isAlive = true;
 
     public void updateFields()
