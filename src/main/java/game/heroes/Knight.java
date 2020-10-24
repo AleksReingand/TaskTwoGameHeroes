@@ -4,13 +4,15 @@ import game.enums.HeroesEnum;
 import game.interfaces.Actions;
 import game.toolsForGame.ToolsForHeroes;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 public class Knight extends Character implements Actions
 {
     boolean isAlive = true;
 
-    public void updateFields()
+    public void updateAbilities()
     {
         setHero(HeroesEnum.KNIGHT.getHero());
         setPower(ToolsForHeroes.getHeroPower(HeroesEnum.KNIGHT));

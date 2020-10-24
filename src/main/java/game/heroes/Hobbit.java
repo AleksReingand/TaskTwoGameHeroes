@@ -17,7 +17,7 @@ public class Hobbit extends Character implements Actions
         System.out.println("don't kill me.....");
     }
 
-    public void updateFields()
+    public void updateAbilities()
     {
         setHero(HeroesEnum.HOBBIT.getHero());
         setPower(ToolsForHeroes.getHeroPower(HeroesEnum.HOBBIT));

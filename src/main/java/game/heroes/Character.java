@@ -1,5 +1,6 @@
 package game.heroes;
 
+import game.interfaces.Actions;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,9 +14,25 @@ import lombok.ToString;
 @Getter
 @Setter
 @Builder
-public class Character
+public class Character implements Actions
 {
     protected String hero;
     protected int power;
     protected int hp;
+
+
+  public void updateAbilities()
+  {
+
+  }
+
+  public void kick(Character hero)
+  {
+
+  }
+
+  public boolean isAlive()
+  {
+    return false;
+  }
 }

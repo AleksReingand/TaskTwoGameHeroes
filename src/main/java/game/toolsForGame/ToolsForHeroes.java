@@ -37,6 +37,7 @@ public class ToolsForHeroes
     public static boolean kickAction(Character left, Character right)
     {
         int hp = left.getHp();
+
         int power = right.getPower();
 
         if(hp - power <= 0)
@@ -44,6 +45,10 @@ public class ToolsForHeroes
             System.out.println("Ah! You killed me...");
             System.out.println(right.getHero() + " killed " + left.getHero());
             return false;
+        }
+        else
+        {
+            left.setHp(hp - power);
         }
         return true;
     }
