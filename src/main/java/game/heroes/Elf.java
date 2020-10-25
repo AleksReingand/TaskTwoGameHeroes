@@ -4,34 +4,33 @@ import game.enums.HeroesEnum;
 import game.interfaces.Actions;
 import game.toolsForGame.ToolsForHeroes;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
 public class Elf extends Character implements Actions
 {
-
-    boolean isAlive = true;
-
-
     public void updateAbilities()
     {
         setHero(HeroesEnum.ELF.getHero());
-        setPower(ToolsForHeroes.getHeroPower(HeroesEnum.ELF));
-        setHp(ToolsForHeroes.getHeroHp(HeroesEnum.ELF));
+        setPower(HeroesEnum.ELF.getMaxPower());
+        setHp(HeroesEnum.ELF.getMaxHp());
     }
 
 
     public void kick(Character character)
     {
-        if(isAlive)
+        if(this.getPower() > character.getPower())
         {
-            isAlive = ToolsForHeroes.kickAction(this, character);
+            System.out.println("You are weaker then me! Ha-ha-ha");
+            character.setHp(character.getHp() - this.getPower());
+        }
+        else
+        {
+            ToolsForHeroes.kickAction(HeroesEnum.ELF.getMinPower(), this, character);
         }
     }
 
     public boolean isAlive()
     {
-        return isAlive;
+        return this.getHp() > 0;
     }
 }

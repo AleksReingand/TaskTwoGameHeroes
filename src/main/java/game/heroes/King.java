@@ -15,20 +15,18 @@ public class King extends Character implements Actions
     public void updateAbilities()
     {
         setHero(HeroesEnum.KING.getHero());
-        setPower(ToolsForHeroes.getHeroPower(HeroesEnum.KING));
+        setPower(HeroesEnum.KING.getMinPower());
         setHp(ToolsForHeroes.getHeroHp(HeroesEnum.KING));
     }
 
     public void kick(Character character)
     {
-        if(isAlive)
-        {
-            isAlive = ToolsForHeroes.kickAction(this, character);
-        }
+        int power = ToolsForHeroes.getHeroPower(HeroesEnum.KING);
+        ToolsForHeroes.kickAction(power, this, character);
     }
 
     public boolean isAlive()
     {
-        return isAlive;
+        return this.getHp() > 0;
     }
 }

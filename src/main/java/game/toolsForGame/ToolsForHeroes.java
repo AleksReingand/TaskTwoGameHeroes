@@ -34,22 +34,10 @@ public class ToolsForHeroes
         return (int)(Math.random() * range) + minHp;
     }
 
-    public static boolean kickAction(Character left, Character right)
+    public static void kickAction(int power, Character hero, Character character)
     {
-        int hp = left.getHp();
-
-        int power = right.getPower();
-
-        if(hp - power <= 0)
-        {
-            System.out.println("Ah! You killed me...");
-            System.out.println(right.getHero() + " killed " + left.getHero());
-            return false;
-        }
-        else
-        {
-            left.setHp(hp - power);
-        }
-        return true;
+        System.out.println("I am " + hero.getHero() + "! Are you ready to dead?!");
+        character.setHp(character.getHp() - power);
+        System.out.println("-" + power + " from " + character.getHero());
     }
 }

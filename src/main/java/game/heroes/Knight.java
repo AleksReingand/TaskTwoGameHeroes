@@ -15,20 +15,18 @@ public class Knight extends Character implements Actions
     public void updateAbilities()
     {
         setHero(HeroesEnum.KNIGHT.getHero());
-        setPower(ToolsForHeroes.getHeroPower(HeroesEnum.KNIGHT));
+        setPower(HeroesEnum.KNIGHT.getMinPower());
         setHp(ToolsForHeroes.getHeroHp(HeroesEnum.KNIGHT));
     }
 
     public void kick(Character character)
     {
-        if(isAlive)
-        {
-            isAlive = ToolsForHeroes.kickAction(this, character);
-        }
+        int power = ToolsForHeroes.getHeroPower(HeroesEnum.KNIGHT);
+        ToolsForHeroes.kickAction(power, this, character);
     }
 
     public boolean isAlive()
     {
-        return isAlive;
+        return this.getHp() > 0;
     }
 }
