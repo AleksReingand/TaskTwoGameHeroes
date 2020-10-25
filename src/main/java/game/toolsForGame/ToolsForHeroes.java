@@ -2,7 +2,6 @@ package game.toolsForGame;
 
 import game.enums.HeroesEnum;
 import game.heroes.Character;
-import game.heroes.Hobbit;
 
 public class ToolsForHeroes
 {
@@ -21,7 +20,7 @@ public class ToolsForHeroes
     }
 
     /**
-     *
+     * fetch
      * @param hero
      * @return random number from range
      */
@@ -34,6 +33,12 @@ public class ToolsForHeroes
         return (int)(Math.random() * range) + minHp;
     }
 
+    /**
+     * action for murderer
+     * @param power
+     * @param hero
+     * @param character
+     */
     public static void kickAction(int power, Character hero, Character character)
     {
         System.out.println("I am " + hero.getHero() + "! Are you ready to dead?!");

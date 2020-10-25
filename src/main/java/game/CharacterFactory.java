@@ -12,6 +12,10 @@ import java.util.Random;
 
 public class CharacterFactory
 {
+    /**
+     * factory for create heroes billet
+     * @return random billet
+     */
     public static Character createCharacter()
     {
         List<Character> billets = new ArrayList<Character>();
