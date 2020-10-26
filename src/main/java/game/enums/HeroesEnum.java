@@ -3,6 +3,9 @@ package game.enums;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 @RequiredArgsConstructor
 @Getter
 public enum HeroesEnum
@@ -21,11 +24,6 @@ public enum HeroesEnum
 
     public static HeroesEnum getHeroByIdx(int idx)
     {
-        for(HeroesEnum hero : values())
-        {
-            if(idx == hero.getIndex())
-                return hero;
-        }
-        return HOBBIT;
+        return Arrays.stream(values()).filter((v) -> v.getIndex() == idx).findFirst().orElse(HOBBIT);
     }
 }
